@@ -41,7 +41,7 @@ function generatedNamedImportGroup(namedImports: NamedImport[]): string {
     let maxImportsPerSingleLine = options.getMaxNamedImportsPerSingleLine();
     if (generatedNamedImports.length > maxImportsPerSingleLine) {
         let newline = `\n${options.getTabString()}`;
-        return `{${newline}${generatedNamedImports.join(`,${newline}`)}${newline}}`;
+        return `{${newline}${generatedNamedImports.join(`,${newline}`)}\n}`;
     } else {
         return `{ ${generatedNamedImports.join(', ')} }`;
     }
